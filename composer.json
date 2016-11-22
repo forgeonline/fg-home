@@ -1,0 +1,25 @@
+{
+    "name": "forgeonline/fg-home",
+    "description": "Forge frontend home pages",
+    "license": "BSD-3-Clause",
+    "type": "forgeonline-forgezf",
+    "version": "1.0.0",
+    "homepage": "http://forge.co.nz/",
+    "prefer-stable": true,
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "zendframework/skeleton-application": "*",
+        "forgeonline/fg-installer":"*",
+		"forgeonline/fg-core":"*"
+    },
+    "autoload": {
+        "psr-4": {
+            "FgHome\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FgHomeTest\\": "test/"
+        }
+    }
+}
