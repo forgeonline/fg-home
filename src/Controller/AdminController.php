@@ -24,7 +24,7 @@ use Zend\view\Model\ViewModel;
  * AdminController Class
  *
  * @category Controller
- * @package  ZbeCore
+ * @package  FgHome
  * @author   Don Nuwinda <nuwinda@gmail.com>
  * @license  GPL http://forge.co.nz
  * @link     http://forge.co.nz

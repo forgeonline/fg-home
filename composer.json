@@ -3,7 +3,7 @@
     "description": "Forge frontend home pages",
     "license": "BSD-3-Clause",
     "type": "forgeonline-forgezf",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "homepage": "http://forge.co.nz/",
     "prefer-stable": true,
     "require": {
