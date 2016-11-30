@@ -2,7 +2,7 @@
 /**
  * Zend Backend (http://forge.co.nz/)
  *
- * IndexController
+ * DashboardController
  *
  * PHP version 5
  *
@@ -14,18 +14,11 @@
  */
 namespace FgHome\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Authentication\AuthenticationService;
-use Zend\Authentication\Adapter\DbTable as AuthAdapter;
-use Zend\Authentication\Result as Result;
-use FgHome\Form\FormLogin;
-use Zend\view\Model\ViewModel;
-use FgHome\Model\LoginValidation;
-use FgCore\Model\zbeMessage;
 use Interop\Container\ContainerInterface;
 
 /**
- * Index Controller Class
+ * DashboardController Class
  *
  * @category Controller
  * @package  ZbeCore
@@ -33,7 +26,7 @@ use Interop\Container\ContainerInterface;
  * @license  GPL http://forge.co.nz
  * @link     http://forge.co.nz
  */
-class IndexController extends AbstractActionController
+class DashboardController extends AdminController
 {
 	/*
 	* @var Zend\ServiceManager\ServiceLocatorInterface
@@ -43,7 +36,6 @@ class IndexController extends AbstractActionController
 	* @var Interop\Container\ContainerInterface
 	*/
 	protected $container;
-	
 	
 	protected $authService;
 	/*
@@ -55,20 +47,21 @@ class IndexController extends AbstractActionController
 		ContainerInterface $container
 	) {
 		$this->container = $container;
-		$this->authService = new AuthenticationService();
+		parent::__construct($this->container);
 	}
 	
     /**
-    * Index action
+    * Process action
     *
     * @return object
     */
     public function indexAction()
     {
-        if( $this->authService->hasIdentity() ){
-            return $this->redirect()->toRoute( 'dashboard' );
-        }
-        $form = new FormLogin();
-        return array('form' => $form );
+		$this->getAdminHeader();
+		$this->getAdminSidebarmenu();
+		$this->getAdminFooter();
+		$layout = $this->layout();
+		$layout->setTemplate('dashboard/index/layout');
     }
+
 }

@@ -12,25 +12,23 @@
 
         <!-- Le styles -->
         <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
-                        ->prependStylesheet($this->basePath('css/style.css'))
-                        ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
-                        ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
-        ?>
-
-        <!-- Scripts -->
-        <?= $this->headScript()
-            ->prependFile($this->basePath('js/bootstrap.min.js'))
-            ->prependFile($this->basePath('js/jquery-2.2.4.min.js'))
+                        ->prependStylesheet($this->basePath('bootstrap/css/bootstrap.min.css'))
+						->prependStylesheet($this->basePath('dist/css/AdminLTE.min.css'))
+                        ->prependStylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css')
+                        ->prependStylesheet('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css');
+						
         ?>
     </head>
     <body>
         <div class="container">
+			<?= $this->Success();?>
+			<?= $this->Error();?>
             <?= $this->content; ?>
             <hr>
             <footer>
                 <p>&copy; 2005 - <?= date('Y') ?> by Zend Technologies Ltd. All rights reserved.</p>
             </footer>
         </div>
-        <?= $this->inlineScript() ?>
+        <?= $this->inlineScript()->prependFile($this->basePath('bootstrap/js/bootstrap.min.js')) ?>
     </body>
 </html>
