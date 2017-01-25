@@ -19,16 +19,10 @@
 						
         ?>
     </head>
-    <body>
-        <div class="container">
+    <body class="hold-transition login-page">
 			<?= $this->Success();?>
 			<?= $this->Error();?>
             <?= $this->content; ?>
-            <hr>
-            <footer>
-                <p>&copy; 2005 - <?= date('Y') ?> by Zend Technologies Ltd. All rights reserved.</p>
-            </footer>
-        </div>
         <?= $this->inlineScript()->prependFile($this->basePath('bootstrap/js/bootstrap.min.js')) ?>
     </body>
 </html>

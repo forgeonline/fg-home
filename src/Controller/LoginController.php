@@ -46,6 +46,7 @@ class LoginController extends AbstractActionController
 	protected $container;
 	
 	protected $authService;
+	
 	/*
 	* @var FgCore\Manager\ConfigurationManager
 	*/

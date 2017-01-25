@@ -59,7 +59,7 @@ class DashboardController extends AdminController
     {
 		$this->getAdminHeader();
 		$this->getAdminSidebarmenu();
-		$this->getAdminFooter();
+//		$this->getAdminFooter();
 		$layout = $this->layout();
 		$layout->setTemplate('dashboard/index/layout');
     }

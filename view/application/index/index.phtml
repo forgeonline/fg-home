@@ -1,6 +1,9 @@
-<div class="row">
-    <div class="container">
-        <div class="col-md-6 col-md-offset-3">
+<div class="login-box">
+
+  <div class="login-box-body">
+    <p class="login-box-msg">Sign in to start your session</p>
+
+
                 <?php
                 $form->prepare();
                 $form->setAttribute('action', $this->url('login'));
@@ -11,13 +14,15 @@
                 
                 <label for="exampleInputEmail1">Username</label>
                 <?php echo $this->formelement( $form->get('userlogin') )?>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
               </div>
-              <div class="form-group">
+              <div class="form-group has-feedback">
                 <label for="exampleInputPassword1">Password</label>
                 <?php echo $this->formelement( $form->get('pw') )?>
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
               </div>
               <button type="submit" class="btn btn-default">Login</button>
             <?php echo $this->form()->closeTag($form)?>
-        </div>
-    </div>
+
+	</div>
 </div>

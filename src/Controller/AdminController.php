@@ -93,4 +93,13 @@ class AdminController extends AbstractActionController
 		$view->setTemplate('admin/footer');
 		$this->layout()->addChild($view, 'footer');
 	}
+	
+	public function getAdminLayout()
+	{
+		$this->getAdminHeader();
+		$this->getAdminSidebarMenu();
+		$this->getAdminFooter();
+		$layout = $this->layout();
+		$layout->setTemplate('dashboard/index/layout');
+	}
 }
